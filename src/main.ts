@@ -1,5 +1,16 @@
-type Hello = string;
+import { PrismaClient } from "@prisma/client";
 
-const hello: Hello = 'Hello, world!';
+const prisma = new PrismaClient();
 
-console.log(hello)
+async function main () {
+  const users = await prisma.user.findMany();
+  console.log(users);
+}
+
+main().then(async () => {
+  await prisma.$disconnect()
+}).catch(async (err) => {
+  console.error(err);
+  await prisma.$disconnect();
+  process.exit(1);
+})
