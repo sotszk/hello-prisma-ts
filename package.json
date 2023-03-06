@@ -1,8 +1,11 @@
 {
   "name": "hello-prisma-ts",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
+  "scripts": {
+    "tsc": "tsc"
+  },
   "devDependencies": {
     "@types/node": "^18.14.6",
     "prisma": "^4.11.0",
